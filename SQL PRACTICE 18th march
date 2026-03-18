@@ -123,5 +123,108 @@ Toy Story 2	1999
 Monsters, Inc.	2001
 Finding Nemo	2003
 EXERCISE-3
-1. QUERY- 
+1. QUERY- SELECT * FROM movies
+WHERE title LIKE 'Toy Story%';
+Table: movies
+id	title	director	year	length_minutes
+1	Toy Story	John Lasseter	1995	81
+3	Toy Story 2	John Lasseter	1999	93
+11	Toy Story 3	Lee Unkrich	2010	103
+2. query- SELECT * FROM movies
+WHERE director='John Lasseter';
+Table: movies
+id	title	director	year	length_minutes
+1	Toy Story	John Lasseter	1995	81
+2	A Bug's Life	John Lasseter	1998	95
+3	Toy Story 2	John Lasseter	1999	93
+7	Cars	John Lasseter	2006	117
+12	Cars 2	John Lasseter	2011	120
+3. query-SELECT * FROM movies
+WHERE director!='John Lasseter';
+Table: movies
+id	title	director	year	length_minutes
+4	Monsters, Inc.	Pete Docter	2001	92
+5	Finding Nemo	Andrew Stanton	2003	107
+6	The Incredibles	Brad Bird	2004	116
+8	Ratatouille	Brad Bird	2007	115
+9	WALL-E	Andrew Stanton	2008	104
+10	Up	Pete Docter	2009	101
+11	Toy Story 3	Lee Unkrich	2010	103
+13	Brave	Brenda Chapman	2012	102
+14	Monsters University	Dan Scanlon	2013	110
+87	WALL-G	Brenda Chapman	2042	97
+4. query- SELECT * FROM movies
+WHERE title LIKE 'WALL-E%';
+Table: movies
+id	title	director	year	length_minutes
+9	WALL-E	Andrew Stanton	2008	104
+exercise -4
+1. query-SELECT DISTINCT Director FROM movies ORDER BY Director;
+Table: movies
+director
+Andrew Stanton
+Brad Bird
+Brenda Chapman
+Dan Scanlon
+John Lasseter
+Lee Unkrich
+Pete Docter
+2. query-SELECT * FROM movies ORDER BY year DESC LIMIT 4;
+Table: movies
+id	title	director	year	length_minutes
+14	Monsters University	Dan Scanlon	2013	110
+2	Brave	Brenda Chapman	2012	102
+8	Cars 2	John Lasseter	2011	120
+10	Toy Story 3	Lee Unkrich	2010	103
+3. QUERY- SELECT * FROM movies ORDER BY Title LIMIT 5;
+Table: movies
+id	title	director	year	length_minutes
+4	A Bug's Life	John Lasseter	1998	95
+2	Brave	Brenda Chapman	2012	102
+11	Cars	John Lasseter	2006	117
+8	Cars 2	John Lasseter	2011	120
+1	Finding Nemo	Andrew Stanton	2003	107
+4. query- SELECT * FROM movies ORDER BY Title LIMIT 5 OFFSET 5;
+Table: movies
+id	title	director	year	length_minutes
+14	Monsters University	Dan Scanlon	2013	110
+5	Monsters, Inc.	Pete Docter	2001	92
+9	Ratatouille	Brad Bird	2007	115
+3	The Incredibles	Brad Bird	2004	116
+7	Toy Story	John Lasseter	1995	81
+EXERCISE -5
+1. QUERY-SELECT city,population FROM North_american_cities WHERE country='Canada';
+Table: north_american_cities
+city	population
+Toronto	2795060
+Montreal	1717767
+2. SELECT city,population FROM North_american_cities WHERE country='United States' ORDER BY latitude DESC;
+Table: north_american_cities
+city	population
+Chicago	2718782
+New York	8405837
+Philadelphia	1553165
+Los Angeles	3884307
+Phoenix	1513367
+Houston	2195914
+3. SELECT city,population FROM North_american_cities WHERE longitude <-87.6298 ORDER BY longitude ASC;
+Table: north_american_cities
+city	population
+Los Angeles	3884307
+Phoenix	1513367
+Guadalajara	1500800
+Mexico City	8555500
+Ecatepec de Morelos	1742000
+Houston	2195914
+4. SELECT city,population FROM North_american_cities WHERE Country ='Mexico'ORDER  BY population DESC LIMIT 2;
+Table: north_american_cities
+city	population
+Mexico City	8555500
+Ecatepec de Morelos	1742000
+5.SELECT city,population FROM North_american_cities WHERE Country ='United States'ORDER  BY population DESC LIMIT 2 OFFSET 2;
+Table: north_american_cities
+city	population
+Chicago	2718782
+Houston	2195914
+
 
